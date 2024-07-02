@@ -1,3 +1,32 @@
+
+
+const { createRoot } = ReactDOM;
+
+// console.log(ReactDOM);
+
+const domContainer = document.querySelector("#root");
+const root = createRoot(domContainer);
+
+function Increment() {
+  const [counter, setCounter] = React.useState(0);
+  // console.log(state);
+  return (
+    <div>
+      <div id="display">{ counter }</div>
+      <button id="button" type="button" onClick={() => setCounter(counter + 1)}>Increment+</button>
+    </div>
+  );
+}
+
+root.render(
+  <div>
+    <Increment />
+    <Increment />
+    <Increment />
+  </div>
+);
+
+
 // let number = 0;
 // const button = document.querySelector("#button");
 // const display = document.querySelector("#display");
@@ -6,16 +35,3 @@
 //   number++;
 //   display.textContent = number;
 // })
-
-const { createRoot } = ReactDOM;
-
-console.log(ReactDOM);
-
-const domContainer = document.querySelector("#root");
-const root = createRoot(domContainer);
-
-function App() {
-  return <h1>Hello world</h1>;
-}
-
-root.render(<App />);
