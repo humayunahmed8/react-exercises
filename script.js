@@ -9,11 +9,15 @@ const root = createRoot(domContainer);
 
 function Increment() {
   const [counter, setCounter] = React.useState(0);
+
+  const incrementCounter = () => {
+    setCounter(counter + 1)
+  }
   // console.log(state);
   return (
     <div>
       <div id="display">{ counter }</div>
-      <button id="button" type="button" onClick={() => setCounter(counter + 1)}>Increment+</button>
+      <button id="button" type="button" onClick={incrementCounter}>Increment+</button>
     </div>
   );
 }
